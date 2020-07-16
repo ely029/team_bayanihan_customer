@@ -131,9 +131,32 @@ AutocompleteDirectionsHandler.prototype.route = function() {
         }
       });
 };
-
+    
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAq2T3Pd6sG59BnH-xHcpbRxPAjasubtPQ&libraries=places&callback=initMap"
         async defer></script>
+        <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+        $('document').ready(function(){
+               
+               $('#submit').click(function(){
+                                       
+
+                                       $.ajax({
+                                          type: "POST",
+                                          contentType: "application/json",
+                                          headers: {  'Access-Control-Allow-Origin': 'http://teambayanihandev-env.eba-mspda7pf.us-east-1.elasticbeanstalk.com' },
+                                          url: 'http://teambayanihandev-env.eba-mspda7pf.us-east-1.elasticbeanstalk.com/auth/customer',
+                                          data: { name: 'norm' },
+                                          dataType: "json",
+                                          async: true,
+                                          crossDomain: true
+                                       });
+               });
+        });
+  </script>
   </body>
 </html>
